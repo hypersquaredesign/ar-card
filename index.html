@@ -139,9 +139,9 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/Build.loader.js";
         const config = {
-            dataUrl: buildUrl + "/cf4dbfab560a6853ad29223a987ec1b9.data.br",
-            frameworkUrl: buildUrl + "/619c61ece4ca36e5749eab9f93cab6da.js.br",
-            codeUrl: buildUrl + "/d2b750d01465babf079c4c00bb2fcfd9.wasm.br",
+            dataUrl: buildUrl + "/d64aa77eb2aae7afeaa155c0ac941c73.data.br",
+            frameworkUrl: buildUrl + "/479428bc22bbae485036396cce37c571.js.br",
+            codeUrl: buildUrl + "/8580b87681f8d236f2845ac96cd7a4bb.wasm.br",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "AR Trip",
@@ -149,10 +149,7 @@
         //Useful when used along with Filename as Hashes option
             cacheControl: function (url) {
             // typically includes: .data, .bundle, .zpt
-            if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "immutable";
-}
-   
+            ZAPPAR_WEBGL_CACHING   
             if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
                 return "immutable";
             }   
@@ -184,7 +181,7 @@
         //script.onload = () => { CreateUnityLoader();   };
         document.body.appendChild(script);
 
-        window.zappar.permission_request_ui_promise().then(WaitForZCVLoad);
+        ZAPPAR_PERMISSIONS_IMPLEMENTATION
 
         function WaitForZCVLoad() {
             if (zappar.loaded()) {
